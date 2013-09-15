@@ -1,0 +1,1 @@
+require 'robin/rails/version'
