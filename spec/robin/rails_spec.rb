@@ -2,9 +2,7 @@ require 'spec_helper'
 require 'robin-rails'
 require 'active_record'
 
-class DummyModel < ActiveRecord::Base
-  include Robin::Rails
-end
+require_relative '../fixtures/dummy_model'
 
 describe Robin::Rails do
   before(:all) do
