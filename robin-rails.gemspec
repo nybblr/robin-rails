@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Robin::Rails::VERSION
   spec.authors       = ["Jonathan Martin"]
   spec.email         = ["me@nybblr.com"]
-  spec.description   = %q{TODO: Write a gem description}
+  spec.description   = %q{Every Batman.js app on Rails needs a sidekick. Bring realtime to the fight with Robin.js.}
   spec.summary       = %q{TODO: Write a gem summary}
   spec.homepage      = "https://github.com/nybblr/robin-rails"
   spec.license       = "MIT"
