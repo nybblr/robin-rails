@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jonathan Martin"]
   spec.email         = ["me@nybblr.com"]
   spec.description   = %q{Every Batman.js app on Rails needs a sidekick. Bring realtime to the fight with Robin.js.}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.summary       = %q{Realtime updates are awesome and the future of web apps. But they're a pain to use from scatch for anything more complex than a couple models. We'd like things to just "autoupdate" and add functionality as desired to react to live updates. That's where Robin.js comes in.}
   spec.homepage      = "https://github.com/nybblr/robin-rails"
   spec.license       = "MIT"
 
