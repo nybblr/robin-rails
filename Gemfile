@@ -5,4 +5,14 @@ gemspec
 
 group :test do
   gem 'coveralls', :require => false
+
+  platforms :ruby do
+    gem 'sqlite3'
+  end
+
+  platforms :jruby do
+    gem 'json'
+    gem 'activerecord-jdbcsqlite3-adapter'
+  end
 end
+
