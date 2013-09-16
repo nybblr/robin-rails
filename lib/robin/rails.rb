@@ -1,5 +1,5 @@
 require 'active_support/concern'
-require 'net/http'
+# require 'robin'
 
 module Robin
   module Rails
