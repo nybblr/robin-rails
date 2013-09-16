@@ -2,6 +2,7 @@
 [![Dependency Status](https://gemnasium.com/nybblr/robin-rails.png)](https://gemnasium.com/nybblr/robin-rails)
 [![Code Climate](https://codeclimate.com/github/nybblr/robin-rails.png)](https://codeclimate.com/github/nybblr/robin-rails)
 [![Coverage Status](https://coveralls.io/repos/nybblr/robin-rails/badge.png?branch=master)](https://coveralls.io/r/nybblr/robin-rails)
+[![Build Status](https://travis-ci.org/nybblr/robin-rails.png)](https://travis-ci.org/nybblr/robin-rails)
 
 Robin.js on Rails
 =================
