@@ -1,5 +1,14 @@
+require 'active_support/core_ext/module/attribute_accessors'
+
 module Robin
+  mattr_accessor :faye_url
+  @@faye_url = 'http://localhost:9292/faye'
+
   class << self
+    def configure
+      yield self
+    end
+
     def publish record, event, data
       msg = {
         channel: channel_for(record, event),
