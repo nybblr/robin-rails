@@ -28,10 +28,9 @@ The latest version of the client-side Robin.js source is available through the a
 #= require batman/batman.jquery
 #
 #= require robin/robin
-#= require robin/reactor
 ~~~
 
-Make sure you load Robin after the Batman source files.
+Make sure you load Robin after the Batman source files. To get things working on the frontend, [checkout the setup details for Robin.js.](https://github.com/nybblr/robin)
 
 Realtime
 --------
