@@ -1,3 +1,4 @@
+require 'net/http'
 require 'active_support/core_ext/module/attribute_accessors'
 
 module Robin
@@ -15,7 +16,7 @@ module Robin
         data: data
       }
 
-      uri = URI.parse("http://localhost:9292/faye")
+      uri = URI.parse(faye_url)
       Net::HTTP.post_form(uri, message: msg.to_json)
     end
 
