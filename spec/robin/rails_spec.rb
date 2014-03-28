@@ -3,6 +3,7 @@ require 'robin-rails'
 require 'active_record'
 
 require_relative '../fixtures/dummy_model'
+require_relative '../fixtures/ams_model'
 
 describe Robin::Rails do
   before(:all) do
@@ -14,15 +15,19 @@ describe Robin::Rails do
 
     ActiveRecord::Migration.verbose = false
     ActiveRecord::Schema.define do
-      create_table :dummy_models, force: true
+      create_table :dummy_models, force: true do |t|
+        t.string  "name"
+        t.integer "age"
+      end
+
+      create_table :ams_models, force: true do |t|
+        t.string  "name"
+        t.integer "age"
+      end
     end
   end
 
   context 'included module' do
-    before do
-      Robin.stub(:publish)
-    end
-
     it 'calls publish after create' do
       Robin.should_receive(:publish).with(anything, :created, anything)
 
@@ -39,6 +44,25 @@ describe Robin::Rails do
       record = DummyModel.create
       Robin.should_receive(:publish).with(anything, :destroyed, anything)
       record.destroy
+    end
+  end
+
+  context 'alternate serializers' do
+    let(:default_json) { {"name"=>"ams", "age"=>5} }
+    let(:ams_json) { {:ams_model=>{:name=>"ams", :age=>5, :boom=>"BOOM!"}} }
+
+    it 'uses default serializer' do
+      Robin.should_receive(:publish)
+        .with(anything, :created, hash_including("id", default_json))
+
+      DummyModel.create :name => "ams", :age => 5
+    end
+
+    it 'uses AMS when available' do
+      Robin.should_receive(:publish)
+        .with(anything, :created, ams_json)
+
+      AmsModel.create :name => "ams", :age => 5
     end
   end
 end
